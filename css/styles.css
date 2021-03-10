@@ -336,6 +336,7 @@ p {
   max-width: 448px;
   border-radius: 4px;
   background-color: #fff;
+  color: #212121;
 }
 
 .modal .lable {
@@ -355,33 +356,9 @@ p {
   letter-spacing: 0.01em;
 }
 
-input {
-  border-color: var(--accent-color);
-}
-
-.lable-assent {
-  display: flex;
-  text-align: start;
-
-  color: var(--title-text-color);
-
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.172;
-  text-transform: none;
-  /* identical to box height */
-
-  letter-spacing: 0.01em;
-}
-
-use {
-}
-
 .input-wrapper {
   /* outline: 2px solid red; */
   position: relative;
-
   box-sizing: border-box;
   border-radius: 4px;
 }
@@ -413,6 +390,7 @@ use {
 }
 
 .form-input {
+  display: inline-flex;
   font-family: inherit;
   width: 100%;
   height: 40px;
@@ -420,23 +398,41 @@ use {
   padding-right: 12px;
   padding-top: 12px;
   padding-bottom: 12px;
-  box-sizing: border-box;
+  /* border: none; */
   border: 1px solid rgba(33, 33, 33, 0.2);
+  outline: none;
+  cursor: pointer;
 
   border-radius: 4px;
 }
 
-.input-wrapper:focus-within {
-  color: #2196f3;
+.form-input:hover,
+.form-input:focus-within {
+  border: 1px solid var(--accent-color);
+  transition: var(--timing-function);
+}
+
+.form-input:hover + .icon,
+.form-input:focus-within + .icon {
+  fill: var(--accent-color);
+  transition: var(--timing-function);
 }
 
 textarea {
+  display: inline-flex;
   resize: none;
   width: 100%;
   height: 120px;
   padding: 12px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: currentColor;
+}
+
+textarea:focus-within,
+textarea:hover {
+  border: 1px solid var(--accent-color);
+  transition: var(--timing-function);
 }
 
 textarea::placeholder {
@@ -451,12 +447,12 @@ textarea::placeholder {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: auto;
+  padding-left: 13px;
   padding-right: auto;
 }
 
 .checkbox + .icon-check {
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   border: 2px solid #212121;
   border-radius: 2px;
 
@@ -484,6 +480,21 @@ textarea::placeholder {
   position: absolute;
 }
 
+.lable-assent {
+  display: flex;
+  text-align: start;
+
+  color: var(--title-text-color);
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.172;
+  text-transform: none;
+  /* identical to box height */
+
+  letter-spacing: 0.01em;
+}
 .modal .assent-text {
   display: inline-flex;
   padding-left: 10px;
@@ -524,8 +535,14 @@ textarea::placeholder {
   height: 30px;
 }
 
-.btn-icon {
+.btn-close use {
   fill: #000000;
+}
+
+.btn-close:hover use,
+.btn-close:focus use {
+  fill: var(--accent-color);
+  transition: var(--timing-function);
 }
 
 /* ADVANTAGES SEKTION */
@@ -894,6 +911,7 @@ textarea::placeholder {
 
 .footer-container {
   display: flex;
+  align-items: flex-start;
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -934,7 +952,7 @@ textarea::placeholder {
 
 .footer-social-container {
   margin-left: 70px;
-  margin-right: auto;
+  margin-right: 93px;
   padding-top: 12px;
 }
 
@@ -980,7 +998,72 @@ textarea::placeholder {
   fill: var(--second-accent-color);
 }
 
-.visually-hidden {
+.footer-singup {
+  display: flex;
+
+  padding-top: 12px;
+  margin: 0;
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer-form label {
+}
+
+.footer-form input {
+  display: flex;
+  padding-left: 16px;
+  width: 358px;
+  height: 50px;
+  background: #2f303a;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+}
+
+.footer-button {
+  position: relative;
+  display: flex;
+  align-self: flex-end;
+  min-width: 200px;
+  height: 50px;
+  margin-left: 12px;
+}
+
+.btn-submit {
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+  height: 50px;
+  padding-left: 28px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+}
+
+.icon-submit {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #ffffff;
+}
+
+. .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
